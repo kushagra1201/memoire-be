@@ -25,7 +25,7 @@ exports.getAllNotes = (req, res) => {
       };
     });
     res.status(200).json({
-      message: 'Note Received Successfully',
+      message: 'Success',
       data: filteredData,
     });
   }).catch((err)=>{

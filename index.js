@@ -12,10 +12,6 @@ app.use(cors());
 
 const port = process.env.PORT || 8000;
 
-app.get('/', (req, res) => {
-  res.status(200).send("Hey there");
-});
-
 app.use('/auth', authRoutes);
 app.use('/notes', noteRoutes);
 

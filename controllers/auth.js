@@ -32,7 +32,7 @@ exports.signUp = (req, res) => {
   // const isValid = temporaryData.findIndex((ele) => ele.email === email);
   
   client.query(`SELECT * FROM users where email = '${email}'`).then((data) => {
-    isValid = data.rows;
+    const isValid = data.rows;
 
     if(isValid.length !== 0){
       res.status(400).json({
@@ -86,7 +86,7 @@ exports.signUp = (req, res) => {
 
 exports.signIn = (req, res) => {
   const {email, password} = req.body;
-
+  
   //check if user already exists
   // const isValid = temporaryData.findIndex((ele) => ele.email === email);
   

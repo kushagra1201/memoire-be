@@ -5,7 +5,7 @@ exports.verifyToken = (req, res, next) => {
   const token = req.headers.authorization;
   jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
     if(err){
-      res.status(500).json({
+      res.status(500).json({ 
         message: 'Server Error Occured'
       });
     }
